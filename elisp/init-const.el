@@ -38,8 +38,8 @@
 ;;; Code:
 
 ;; UserInfo
-(setq user-full-name "Mingde (Matthew) Zeng")
-(setq user-mail-address "matthewzmd@gmail.com")
+(setq user-full-name "Hendrik Weisser")
+(setq user-mail-address "hendrik.weisser@stormtherapeutics.com")
 ;; -UserInfo
 
 ;; Consts
