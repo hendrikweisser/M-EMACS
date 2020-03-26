@@ -58,7 +58,7 @@
 ;; -PreSym
 
 ;; TitleBar
-(setq-default frame-title-format '("M-EMACS - " user-login-name "@" system-name " - %b"))
+(setq-default frame-title-format '("%b - M-EMACS"))
 ;; -TitleBar
 
 ;; YorN
@@ -73,10 +73,10 @@
 
 ;; DisLineNum
 ;; Hook line numbers to only when files are opened, also use linum-mode for emacs-version< 26
-(if (version< emacs-version "26")
-    (global-linum-mode)
-  (add-hook 'text-mode-hook #'display-line-numbers-mode)
-  (add-hook 'prog-mode-hook #'display-line-numbers-mode))
+;; (if (version< emacs-version "26")
+;;     (global-linum-mode)
+;;   (add-hook 'text-mode-hook #'display-line-numbers-mode)
+;;   (add-hook 'prog-mode-hook #'display-line-numbers-mode))
 ;; Display column numbers in modeline
 (column-number-mode 1)
 ;; -DisLineNum
