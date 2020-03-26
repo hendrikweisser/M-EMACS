@@ -48,7 +48,7 @@
 ;; DefBindings
 ;; Unbind unneeded keys
 (global-set-key (kbd "C-z") nil)
-(global-set-key (kbd "M-z") nil)
+; (global-set-key (kbd "M-z") nil)
 (global-set-key (kbd "C-x C-z") nil)
 (global-set-key (kbd "M-/") nil)
 ;; Truncate lines
@@ -60,6 +60,8 @@
 ;; Move up/down paragraph
 (global-set-key (kbd "M-n") #'forward-paragraph)
 (global-set-key (kbd "M-p") #'backward-paragraph)
+;; Bring the menu back
+(global-set-key (kbd "<S-f10>") #'menu-bar-mode)
 ;; -DefBindings
 
 ;; UTF8Coding
@@ -170,6 +172,9 @@ The original function deletes trailing whitespace of the current line."
 (add-to-list 'auto-mode-alist '("\\.in\\'" . text-mode))
 (add-to-list 'auto-mode-alist '("\\.out\\'" . text-mode))
 (add-to-list 'auto-mode-alist '("\\.args\\'" . text-mode))
+
+;; Subword mode
+(subword-mode t)
 ;; -SmallConfigs
 
 (provide 'init-global-config)
