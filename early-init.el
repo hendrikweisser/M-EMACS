@@ -57,10 +57,11 @@
 
 ;; DisableUnnecessaryInterface
 (menu-bar-mode -1)
-(unless (and (display-graphic-p) (eq system-type 'darwin))
-  (push '(menu-bar-lines . 0) default-frame-alist))
+;; (unless (and (display-graphic-p) (eq system-type 'darwin))
+;;   (push '(menu-bar-lines . 0) default-frame-alist))
 (push '(tool-bar-lines . 0) default-frame-alist)
-(push '(vertical-scroll-bars) default-frame-alist)
+;; (push '(vertical-scroll-bars) default-frame-alist)
+(push '(scroll-bar-width . 8) default-frame-alist)
 ;; -DisableUnnecessaryInterface
 
 (provide 'early-init)
