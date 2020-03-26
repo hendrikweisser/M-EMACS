@@ -59,14 +59,14 @@
 ;; -AwesomePairPac
 
 ;; DeleteBlockPac
-(use-package delete-block
-  :load-path (lambda () (expand-file-name "site-elisp/delete-block" user-emacs-directory))
-  :bind
-  (("M-d" . delete-block-forward)
-   ("C-<backspace>" . delete-block-backward)
-   ("M-<backspace>" . delete-block-backward)
-   ("M-DEL" . delete-block-backward)))
-;; -DeleteBlockPac
+;; (use-package delete-block
+;;   :load-path (lambda () (expand-file-name "site-elisp/delete-block" user-emacs-directory))
+;;   :bind
+;;   (("M-d" . delete-block-forward)
+;;    ("C-<backspace>" . delete-block-backward)
+;;    ("M-<backspace>" . delete-block-backward)
+;;    ("M-DEL" . delete-block-backward)))
+;; ;; -DeleteBlockPac
 
 (provide 'init-edit)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
