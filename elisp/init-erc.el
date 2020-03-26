@@ -130,7 +130,7 @@
            (msg (s-trim (s-collapse-whitespace message))))
       (alert (concat nick ": " msg) :title title)))
   :bind
-  (("M-z i" . erc-start-or-switch)
+  (("C-z i" . erc-start-or-switch)
    ("C-c C-b" . erc-switch-to-buffer))
   :hook
   (ercn-notify . erc-notify))
