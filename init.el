@@ -38,6 +38,13 @@
 ;;; Code:
 
 ;; CheckVer
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (cond ((version< emacs-version "26.1")
        (warn "M-EMACS requires Emacs 26.1 and above!"))
       ((let* ((early-init-f (expand-file-name "early-init.el" user-emacs-directory))
@@ -149,7 +156,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-fonts)
 
-(require 'init-scroll)
+; (require 'init-scroll)
 
 ;; General Programming
 (require 'init-magit)
@@ -212,7 +219,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-eww)
 
-(require 'init-mu4e)
+; (require 'init-mu4e)
 
 (require 'init-tramp)
 
@@ -220,7 +227,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-leetcode)
 
-(require 'init-pyim)
+; (require 'init-pyim)
 
 (require 'init-epaint)
 
