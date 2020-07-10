@@ -68,7 +68,7 @@
 ;; StartupScreen
 (setq inhibit-startup-screen t)
 (setq initial-major-mode 'text-mode)
-(setq initial-scratch-message "Present Day, Present Time...\n")
+(setq initial-scratch-message "Welcome!\n")
 ;; -StartupScreen
 
 ;; DisLineNum
@@ -83,8 +83,11 @@
 
 ;; DisTimeBat
 (display-time-mode 1)
-(display-battery-mode 1)
+;(display-battery-mode 1)
 ;; -DisTimeBat
+
+(setq-default fill-column 80)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
 (provide 'init-ui-config)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
