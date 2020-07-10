@@ -6,7 +6,7 @@
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Fri Mar 15 11:09:30 2019 (-0400)
 ;; Version: 2.0.0
-;; Last-Updated: Tue Dec 24 14:05:45 2019 (-0500)
+;; Last-Updated: Thu Jun 18 13:32:19 2020 (-0400)
 ;;           By: Mingde (Matthew) Zeng
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d org toc-org htmlize ox-gfm
@@ -45,15 +45,16 @@
   ("C-c l" . org-store-link)
   ("C-c a" . org-agenda)
   ("C-c c" . org-capture)
-  ("C-c b" . org-switch)
   (:map org-mode-map ("C-c C-p" . org-export-as-pdf-and-open))
   :custom
   (org-log-done 'time)
+  (calendar-latitude 43.65107) ;; Prerequisite: set it to your location, currently default: Toronto, Canada
+  (calendar-longitude -79.347015) ;; Usable for M-x `sunrise-sunset' or in `org-agenda'
   (org-export-backends (quote (ascii html icalendar latex md odt)))
   (org-use-speed-commands t)
   (org-confirm-babel-evaluate 'nil)
   (org-todo-keywords
-   '((sequence "TODO" "IN-PROGRESS" "REVIEW" "|" "DONE")))
+   '((sequence "TODO" "IN-PROGRESS" "ON-HOLD" "REVIEW" "QUEUE" "|" "DONE" "CANCELED")))
   (org-agenda-window-setup 'other-window)
   :config
   (unless (version< org-version "9.2")
