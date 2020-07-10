@@ -49,7 +49,12 @@
   (lsp-prefer-flymake nil) ; Use flycheck instead of flymake
   (lsp-file-watch-threshold 2000)
   (read-process-output-max (* 1024 1024))
-  :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer))
+  :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer)
+              ;; don't overwrite normal right-click behavior:
+              ("<mouse-3>" . nil)
+              ("C-<down-mouse-3>" . lsp-mouse-click)
+              ("C-<mouse-3>" . ignore))
+
   :hook ((java-mode python-mode go-mode
           js-mode js2-mode typescript-mode web-mode
           c-mode c++-mode objc-mode) . lsp))

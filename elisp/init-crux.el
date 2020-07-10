@@ -6,8 +6,8 @@
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Tue Dec 24 13:15:38 2019 (-0500)
 ;; Version: 2.0.0
-;; Last-Updated: Thu Dec 26 22:02:32 2019 (-0500)
-;;           By: Mingde (Matthew) Zeng
+;; Last-Updated: Fri Mar 27 12:09:08 2020 (+0000)
+;;           By: Hendrik Weisser
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d crux
 ;; Compatibility: emacs-version >= 26.1
@@ -43,7 +43,8 @@
   (("C-a" . crux-move-beginning-of-line)
    ("C-x 4 t" . crux-transpose-windows)
    ("C-x K" . crux-kill-other-buffers)
-   ("C-k" . crux-smart-kill-line))
+   ("C-S-k" . crux-smart-kill-line)
+   ("<S-return>" . crux-smart-open-line))
   :config
   (crux-with-region-or-buffer indent-region)
   (crux-with-region-or-buffer untabify)
@@ -54,3 +55,4 @@
 (provide 'init-crux)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-crux.el ends here
+(global-set-key (kbd "<S-return>") #'crux-smart-open-line)
