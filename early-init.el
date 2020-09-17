@@ -6,8 +6,8 @@
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Sun Jun  9 17:58:05 2019 (-0400)
 ;; Version: 2.0.0
-;; Last-Updated: Tue Sep 17 01:13:45 2019 (-0400)
-;;           By: Mingde (Matthew) Zeng
+;; Last-Updated: Fri Jul 10 13:24:00 2020 (+0100)
+;;           By: Hendrik Weisser
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d init early-init
 ;; Compatibility: emacs-version >= 27
@@ -56,7 +56,7 @@
 ;; -UnsetSRF
 
 ;; DisableUnnecessaryInterface
-(menu-bar-mode -1)
+;; (menu-bar-mode -1) ; use <F10> (or <S-F10>) to show the menu (permanently)
 ;; (unless (and (display-graphic-p) (eq system-type 'darwin))
 ;;   (push '(menu-bar-lines . 0) default-frame-alist))
 (push '(tool-bar-lines . 0) default-frame-alist)

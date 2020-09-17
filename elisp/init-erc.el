@@ -6,8 +6,8 @@
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Tue Jul 30 22:15:50 2019 (-0400)
 ;; Version: 2.0.0
-;; Last-Updated: Thu Jul  2 22:02:47 2020 (-0400)
-;;           By: Mingde (Matthew) Zeng
+;; Last-Updated: Fri Jul 10 13:25:23 2020 (+0100)
+;;           By: Hendrik Weisser
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d erc irc
 ;; Compatibility: emacs-version >= 26.1
@@ -74,7 +74,7 @@
   (erc-nick-uniquifier "_")
   (erc-log-channels-directory (expand-file-name ".erc-logs" user-emacs-directory))
   :bind
-  (("M-z i" . erc-start-or-switch)
+  (; ("M-z i" . erc-start-or-switch) ; <M-z> is not available
    ("C-c C-b" . erc-switch-to-buffer)
    (:map erc-mode-map
          ("M-RET" . newline)))

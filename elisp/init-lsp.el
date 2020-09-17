@@ -6,8 +6,8 @@
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Fri Mar 15 10:42:09 2019 (-0400)
 ;; Version: 2.0.0
-;; Last-Updated: Thu Jun 18 13:16:46 2020 (-0400)
-;;           By: Mingde (Matthew) Zeng
+;; Last-Updated: Mon Aug  3 17:22:09 2020 (+0100)
+;;           By: Hendrik Weisser
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d lsp
 ;; Compatibility: emacs-version >= 26.1
@@ -52,6 +52,7 @@
   (lsp-eldoc-hook nil)
   :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer)
               ;; don't overwrite normal right-click behavior:
+              ;; ("<mouse-movement>" . nil)
               ("<mouse-3>" . nil)
               ("C-<down-mouse-3>" . lsp-mouse-click)
               ("C-<mouse-3>" . ignore))

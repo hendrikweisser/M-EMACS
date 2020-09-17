@@ -6,8 +6,8 @@
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Thu Mar 14 14:01:54 2019 (-0400)
 ;; Version: 2.0.0
-;; Last-Updated: Thu Jul  2 23:21:33 2020 (-0400)
-;;           By: Mingde (Matthew) Zeng
+;; Last-Updated: Fri Jul 10 13:22:53 2020 (+0100)
+;;           By: Hendrik Weisser
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -48,7 +48,7 @@
 ;; DefBindings
 ;; Unbind unneeded keys
 (global-set-key (kbd "C-z") nil)
-; (global-set-key (kbd "M-z") nil)
+; (global-set-key (kbd "M-z") nil) ; bound to "zap-to-char"
 (global-set-key (kbd "C-x C-z") nil)
 (global-set-key (kbd "M-/") nil)
 ;; Truncate lines
