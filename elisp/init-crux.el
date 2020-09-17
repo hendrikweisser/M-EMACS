@@ -5,9 +5,7 @@
 ;; Author: Mingde (Matthew) Zeng
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Tue Dec 24 13:15:38 2019 (-0500)
-;; Version: 2.0.0
-;; Last-Updated: Fri Mar 27 12:09:08 2020 (+0000)
-;;           By: Hendrik Weisser
+;; Version: 3.0
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d crux
 ;; Compatibility: emacs-version >= 26.1

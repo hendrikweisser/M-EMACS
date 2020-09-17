@@ -5,9 +5,7 @@
 ;; Author: Mingde (Matthew) Zeng
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
 ;; Created: Fri Mar 15 11:09:30 2019 (-0400)
-;; Version: 2.0.0
-;; Last-Updated: Thu Jun 18 13:32:19 2020 (-0400)
-;;           By: Mingde (Matthew) Zeng
+;; Version: 3.0
 ;; URL: https://github.com/MatthewZMD/.emacs.d
 ;; Keywords: M-EMACS .emacs.d org toc-org htmlize ox-gfm
 ;; Compatibility: emacs-version >= 26.1
@@ -53,10 +51,13 @@
   (org-export-backends (quote (ascii html icalendar latex md odt)))
   (org-use-speed-commands t)
   (org-confirm-babel-evaluate 'nil)
+  (org-latex-listings-options '(("breaklines" "true")))
+  (org-latex-listings t)
   (org-todo-keywords
    '((sequence "TODO" "IN-PROGRESS" "ON-HOLD" "REVIEW" "QUEUE" "|" "DONE" "CANCELED")))
   (org-agenda-window-setup 'other-window)
   :config
+  (add-to-list 'org-latex-packages-alist '("" "listings" nil))
   (unless (version< org-version "9.2")
     (require 'org-tempo))
   (when (file-directory-p "~/org/agenda/")

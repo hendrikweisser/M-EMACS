@@ -1,20 +1,21 @@
-;;; init-projectile.el --- -*- lexical-binding: t -*-
+;;; init-debbugs.el --- -*- lexical-binding: t -*-
 ;;
-;; Filename: init-projectile.el
-;; Description: Initialize Projectile
+;; Filename: init-debbugs.el
+;; Description: Configure debbugs
 ;; Author: Mingde (Matthew) Zeng
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
-;; Created: Fri Mar 15 09:10:23 2019 (-0400)
-;; Version: 3.0
-;; URL: https://github.com/MatthewZMD/.emacs.d
-;; Keywords: M-EMACS .emacs.d projectile
-;; Compatibility: emacs-version >= 26.1
+;; Created: Sat Sep 12 18:27:12 2020 (-0400)
+;; Version: 3.0.0
+;; URL:
+;; Doc URL:
+;; Keywords:
+;; Compatibility:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Commentary:
 ;;
-;; This initializes projectile
+;; This initializes debbugs
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -35,23 +36,11 @@
 ;;
 ;;; Code:
 
-(eval-when-compile
-  (require 'init-const))
+;; DebbugsPac
+(use-package debbugs
+  :commands (debbugs-gnu))
+;; -DebbugsPac
 
-;; ProjPac
-(use-package projectile
-  :bind
-  ("C-c p" . projectile-command-map)
-  :custom
-  (projectile-completion-system 'ivy)
-  :config
-  (projectile-mode 1)
-  (when (and *sys/win32*
-             (executable-find "tr"))
-    (setq projectile-indexing-method 'alien))
-  (add-to-list 'projectile-globally-ignored-directories "node_modules"))
-;; -ProjPac
-
-(provide 'init-projectile)
+(provide 'init-debbugs)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-projectile.el ends here
+;;; init-debbugs.el ends here
