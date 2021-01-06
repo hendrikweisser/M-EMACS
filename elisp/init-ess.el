@@ -39,6 +39,9 @@
 (use-package ess
   :defer t
   :commands R
+  :custom
+  (ess-style 'GNU)
+  (ess-auto-width 'window)
   :config
   (load "ess-autoloads"))
 ;; -ESSPac
