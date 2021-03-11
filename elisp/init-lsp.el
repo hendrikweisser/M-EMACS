@@ -45,6 +45,7 @@
   (lsp-file-watch-threshold 2000)
   (read-process-output-max (* 1024 1024))
   (lsp-eldoc-hook nil)
+  (lsp-restart 'auto-restart)
   :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer)
               ;; don't overwrite normal right-click behavior:
               ;; ("<mouse-movement>" . nil)
@@ -74,16 +75,17 @@
         ("M-n" . forward-paragraph)
         ("M-p" . backward-paragraph))
   :custom
-  ; (lsp-ui-doc-enable t)
-  (lsp-ui-doc-header t)
-  (lsp-ui-doc-include-signature t)
-  (lsp-ui-doc-border (face-foreground 'default))
+  ;; Disable annoying doc pop-ups:
+  (lsp-ui-doc-enable nil)
+  ; (lsp-ui-doc-header t)
+  ; (lsp-ui-doc-include-signature t)
+  ; (lsp-ui-doc-border (face-foreground 'default))
   (lsp-ui-sideline-enable nil)
   (lsp-ui-sideline-ignore-duplicate t)
   (lsp-ui-sideline-show-code-actions nil)
   :config
   ;; Use lsp-ui-doc-webkit only in GUI
-  (if (display-graphic-p)
+   ;(if (display-graphic-p)
       (setq lsp-ui-doc-use-webkit t))
   ;; WORKAROUND Hide mode-line of the lsp-ui-imenu buffer
   ;; https://github.com/emacs-lsp/lsp-ui/issues/243
