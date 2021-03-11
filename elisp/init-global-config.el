@@ -184,7 +184,7 @@ The original function deletes trailing whitespace of the current line."
 (add-to-list 'auto-mode-alist '("\\.args\\'" . text-mode))
 
 ;; Subword mode
-(subword-mode t)
+(global-subword-mode 1)
 ;; -SmallConfigs
 
 (provide 'init-global-config)
