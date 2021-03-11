@@ -42,7 +42,11 @@
   (use-package yasnippet-snippets :after yasnippet)
   :hook ((prog-mode LaTeX-mode org-mode) . yas-minor-mode)
   :bind
-  (:map yas-minor-mode-map ("C-c C-n" . yas-expand-from-trigger-key))
+  (:map yas-minor-mode-map
+        ("C-c C-n" . yas-expand-from-trigger-key)
+        ;; stop snippets getting in the way when indenting:
+        ("TAB" . nil)
+        ([(tab)] . nil))
   (:map yas-keymap
         (("TAB" . smarter-yas-expand-next-field)
          ([(tab)] . smarter-yas-expand-next-field)))
