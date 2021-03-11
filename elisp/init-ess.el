@@ -43,7 +43,13 @@
   (ess-style 'GNU)
   (ess-auto-width 'window)
   :config
-  (load "ess-autoloads"))
+  (load "ess-autoloads")
+  ;; use "_" to insert "->"
+  (add-hook 'ess-r-mode-hook
+            '(lambda()
+               (define-key ess-r-mode-map "_" #'ess-insert-assign)
+               (define-key inferior-ess-r-mode-map "_" #'ess-insert-assign)))
+  )
 ;; -ESSPac
 
 (provide 'init-ess)
