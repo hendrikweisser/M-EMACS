@@ -58,7 +58,7 @@
 ;; -CheckVer
 
 ;; BetterGC
-(defvar better-gc-cons-threshold 67108864 ; 64mb
+(defvar better-gc-cons-threshold 134217728 ; 128mb
   "The default value to use for `gc-cons-threshold'.
 
 If you experience freezing, decrease this.  If you experience stuttering, increase this.")
@@ -145,7 +145,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-buffer)
 
-;; User Interface Enhancements
+;; UI Enhancements
 (require 'init-ui-config)
 
 (require 'init-theme)
@@ -165,7 +165,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-yasnippet)
 
-(require 'init-flycheck)
+(require 'init-syntax)
 
 (require 'init-dumb-jump)
 
@@ -190,7 +190,6 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (require 'init-company)
 
 ;; Programming
-
 (require 'init-java)
 
 (require 'init-cc)
@@ -208,32 +207,42 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; Web Development
 (require 'init-webdev)
 
-;; Miscellaneous
+;; Office
 (require 'init-org)
 
+(require 'init-pdf)
+
+;; Internet
 (require 'init-eaf)
 
 ; (require 'init-erc) ; IRC client
-
-(require 'init-eww)
 
 ; (require 'init-mu4e) ; email client
 
 (require 'init-tramp)
 
-(require 'init-pdf)
-
 (require 'init-leetcode)
-
-; (require 'init-input-method) ; support for Chinese input
 
 (require 'init-debbugs)
 
-(require 'init-epaint)
+(require 'init-hackernews)
+
+(require 'init-eww)
+
+;; Miscellaneous
+(require 'init-chinese)
 
 (require 'init-games)
 
+(require 'init-epaint)
+
 (require 'init-zone)
+
+;; InitPrivate
+;; Load init-private.el if it exists
+(when (file-exists-p (expand-file-name "init-private.el" user-emacs-directory))
+  (load-file (expand-file-name "init-private.el" user-emacs-directory)))
+;; -InitPrivate
 
 (provide 'init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

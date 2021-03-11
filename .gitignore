@@ -24,3 +24,6 @@
 /.org-id-locations
 /eln-cache/
 /url/
+/request/
+/hackernews/
+/init-private.el
