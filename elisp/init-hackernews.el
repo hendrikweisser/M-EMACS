@@ -42,8 +42,7 @@
 (use-package hackernews
   :commands (hackernews)
   :bind
-  (("M-z h" . hackernews)
-   ("M-m h" . hackernews)))
+  ("M-m h" . hackernews))
 ;; -HackerNewsPac
 
 (provide 'init-hackernews)

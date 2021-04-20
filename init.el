@@ -230,7 +230,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (require 'init-eww)
 
 ;; Miscellaneous
-(require 'init-chinese)
+; (require 'init-chinese)
 
 (require 'init-games)
 
