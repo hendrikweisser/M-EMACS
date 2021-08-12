@@ -213,7 +213,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (require 'init-pdf)
 
 ;; Internet
-(require 'init-eaf)
+; (require 'init-eaf) ; not installed
 
 ; (require 'init-erc) ; IRC client
 

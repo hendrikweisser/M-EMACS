@@ -50,7 +50,7 @@
   (browse-url-browser-function 'eaf-open-browser) ;; Make EAF Browser my default browser
   (eaf-browser-continue-where-left-off t)
   :config
-  ;(require 'eaf-org) ;; fix "file missing" error on startup
+  (require 'eaf-org) ;; fix "file missing" error on startup
   (when (display-graphic-p)
     (require 'eaf-all-the-icons))
   (defalias 'browse-web #'eaf-open-browser)
