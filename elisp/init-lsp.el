@@ -40,21 +40,29 @@
   :defer t
   :commands lsp
   :custom
+  (lsp-keymap-prefix "C-x l")
   (lsp-auto-guess-root nil)
   (lsp-prefer-flymake nil) ; Use flycheck instead of flymake
-  (lsp-file-watch-threshold 2000)
+  (lsp-enable-file-watchers nil)
+  (lsp-enable-folding nil)
   (read-process-output-max (* 1024 1024))
+  (lsp-keep-workspace-alive nil)
   (lsp-eldoc-hook nil)
-  (lsp-restart 'auto-restart)
   :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer)
               ;; don't overwrite normal right-click behavior:
               ;; ("<mouse-movement>" . nil)
               ("<mouse-3>" . nil)
               ("C-<down-mouse-3>" . lsp-mouse-click)
               ("C-<mouse-3>" . ignore))
-  :hook ((java-mode python-mode go-mode
+  :hook ((java-mode python-mode go-mode rust-mode
           js-mode js2-mode typescript-mode web-mode
-          c-mode c++-mode objc-mode) . lsp))
+          c-mode c++-mode objc-mode) . lsp-deferred)
+  :config
+  (defun lsp-update-server ()
+    "Update LSP server."
+    (interactive)
+    ;; Equals to `C-u M-x lsp-install-server'
+    (lsp-install-server t)))
 ;; -LSPPac
 
 ;; LSPUI
@@ -85,12 +93,14 @@
   (lsp-ui-sideline-show-code-actions nil)
   :config
   ;; Use lsp-ui-doc-webkit only in GUI
-   ; (if (display-graphic-p)
-   ;    (setq lsp-ui-doc-use-webkit t))
+  (when (display-graphic-p)
+    (setq lsp-ui-doc-use-webkit t))
   ;; WORKAROUND Hide mode-line of the lsp-ui-imenu buffer
   ;; https://github.com/emacs-lsp/lsp-ui/issues/243
   (defadvice lsp-ui-imenu (after hide-lsp-ui-imenu-mode-line activate)
-    (setq mode-line-format nil)))
+    (setq mode-line-format nil))
+  ;; `C-g'to close doc
+  (advice-add #'keyboard-quit :before #'lsp-ui-doc-hide))
 ;; -LSPUI
 
 ;; DAPPac
