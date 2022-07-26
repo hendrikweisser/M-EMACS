@@ -37,7 +37,8 @@
 
 (eval-when-compile
   (require 'init-const)
-  (require 'battery))
+  ;; (require 'battery)
+  )
 
 ;; Highlight
 (global-hl-line-mode 1)
@@ -85,10 +86,10 @@
 
 ;; DisTimeBat
 (display-time-mode 1)
-(when (and battery-status-function
-           (not (string-match-p "N/A" (battery-format "%B" (funcall battery-status-function)))))
-  (display-battery-mode 1))
-;; -DisTimeBat
+;; (when (and battery-status-function
+;;            (not (string-match-p "N/A" (battery-format "%B" (funcall battery-status-function)))))
+;;   (display-battery-mode 1))
+;; ;; -DisTimeBat
 
 (setq-default fill-column 80)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
