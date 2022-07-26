@@ -198,6 +198,8 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-ess)
 
+(require 'init-polymode)
+
 (require 'init-latex)
 
 (require 'init-buildsystem)

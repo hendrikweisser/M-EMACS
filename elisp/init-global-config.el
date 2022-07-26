@@ -190,7 +190,7 @@ The original function deletes trailing whitespace of the current line."
 (add-to-list 'auto-mode-alist '("\\.args\\'" . text-mode))
 (add-to-list 'auto-mode-alist '("\\.bb\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.bbclass\\'" . shell-script-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd\\'" . poly-markdown+r-mode))
 
 ;; Subword mode
 (global-subword-mode 1)
